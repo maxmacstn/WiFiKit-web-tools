@@ -9,7 +9,7 @@
       {
         "chipFamily": "ESP8266",
         "parts": [
-          { "path": "https://github.com/maxmacstn/mitsubishi2MQTT/releases/download/2022.01.10/m2mqtt-22-1-magi-10-ESP07.bin", "offset": 0 }
+          { "path": "/static/firmware_build_cn105kit/m2mqtt-22-1-magi-10-ESP07.bin", "offset": 0 }
         ]
       }
     ]
