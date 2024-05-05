@@ -13,10 +13,12 @@ const resetTransport = async (transport: Transport) => {
     dataTerminalReady: false,
     requestToSend: true,
   });
+  await sleep(250);
   await transport.device.setSignals({
     dataTerminalReady: false,
     requestToSend: false,
   });
+  await sleep(250);
 };
 
 export const flash = async (
@@ -42,6 +44,7 @@ export const flash = async (
     transport,
     baudrate: 115200,
     romBaudrate: 115200,
+    enableTracing: false,
   });
 
   // For debugging
@@ -54,8 +57,8 @@ export const flash = async (
   });
 
   try {
-    await esploader.main_fn();
-    await esploader.flash_id();
+    await esploader.main();
+    await esploader.flashId();
   } catch (err: any) {
     console.error(err);
     fireStateEvent({
@@ -164,7 +167,7 @@ export const flash = async (
       message: "Erasing device...",
       details: { done: false },
     });
-    await esploader.erase_flash();
+    await esploader.eraseFlash();
     fireStateEvent({
       state: FlashStateType.ERASING,
       message: "Device erased",
@@ -185,7 +188,7 @@ export const flash = async (
   let totalWritten = 0;
 
   try {
-    await esploader.write_flash({
+    await esploader.writeFlash({
       fileArray,
       flashSize: "keep",
       flashMode: "keep",

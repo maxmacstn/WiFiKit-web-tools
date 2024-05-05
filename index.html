@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -79,8 +79,10 @@
       }
       .screenshot img {
         max-width: 100%;
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        box-shadow:
+          rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+          rgb(0 0 0 / 12%) 0px 1px 3px 0px;
         border-radius: 4px;
       }
       .screenshot i {
@@ -172,7 +174,7 @@
         device to your computer and hit the button:
       </p>
       <esp-web-install-button
-        manifest="https://firmware.esphome.io/esphome-web/manifest.json"
+        manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
       >
         <i slot="unsupported">
           The demo is not available because your browser does not support Web
@@ -233,6 +235,38 @@
             <img src="static/logos/2smart.png" alt="2Smart logo" />
           </div>
           <div class="name">2Smart</div>
+        </a>
+        <a href="https://clockwise.page" target="_blank" class="project">
+          <div class="logo">
+            <img src="static/logos/clockwise.png" alt="Clockwise logo" />
+          </div>
+          <div class="name">Clockwise</div>
+        </a>
+        <a
+          href="https://sblantipodi.github.io/glow_worm_luciferin"
+          target="_blank"
+          class="project"
+        >
+          <div class="logo">
+            <img
+              src="static/logos/luciferin_logo.png"
+              alt="Firefly Luciferin logo"
+            />
+          </div>
+          <div class="name">Luciferin</div>
+        </a>
+        <a
+          href="https://install.openepaperlink.de"
+          target="_blank"
+          class="project"
+        >
+          <div class="logo">
+            <img
+              src="static/logos/openepaperlink.png"
+              alt="OpenEpaperLink logo"
+            />
+          </div>
+          <div class="name">OpenEpaperLink</div>
         </a>
       </div>
 
@@ -313,7 +347,7 @@
       <pre>
 &lt;script
   type="module"
-  src="https://unpkg.com/esp-web-tools@9.0.3/dist/web/install-button.js?module"
+  src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
 >&lt;/script></pre
       >
       <p>
@@ -329,7 +363,7 @@
       </p>
       <pre>
 &lt;esp-web-install-button
-  manifest="/static/firmware_build/manifest.json"
+  manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
 >&lt;/esp-web-install-button></pre
       >
       <p>
@@ -359,7 +393,8 @@
         Manifests describe the firmware that you want to offer the user to
         install. It allows specifying different builds for the different types
         of ESP devices. Current supported chip families are
-        <code>ESP8266</code>, <code>ESP32</code>, <code>ESP32-C3</code>,
+        <code>ESP8266</code>, <code>ESP32</code>, <code>ESP32-C2</code>,
+        <code>ESP32-C3</code>, <code>ESP32-C6</code>, <code>ESP32-H2</code>,
         <code>ESP32-S2</code> and <code>ESP32-S3</code>. The correct build will
         be automatically selected based on the type of the connected ESP device.
       </p>
@@ -456,6 +491,7 @@ button.overrides = {
       <ul>
         <li><code>--esp-tools-button-color</code></li>
         <li><code>--esp-tools-button-text-color</code></li>
+        <li><code>--esp-tools-button-border-radius</code></li>
       </ul>
       <p>There are also some attributes that can be used for styling:</p>
       <table>
@@ -479,7 +515,7 @@ button.overrides = {
       </p>
       <pre>
 &lt;esp-web-install-button
-  manifest="/static/firmware_build/manifest.json"
+  manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
 >
   &lt;button slot="activate">Custom install button&lt;/button>
   &lt;span slot="unsupported">Ah snap, your browser doesn't work!&lt;/span>
