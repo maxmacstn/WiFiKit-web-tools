@@ -3,12 +3,13 @@
     "version": "2024.5.1",
     "home_assistant_domain": "mqtt",
     "funding_url": "facebook.com/magidiy",
+    "new_install_prompt_erase": true,
     "builds": [
      
       {
       "chipFamily": "ESP32-S3",
         "parts": [
-          { "path": "/static/firmware_build_cn105kit/m2mqtt_2024-5-1-ESP32S3.bin", "offset": 65536 }
+          { "path": "/static/firmware_build_cn105kit_wifikit/m2mqtt_2024-5-1-ESP32S3.bin", "offset": 65536 }
         ]
       }
     ]
