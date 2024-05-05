@@ -3,12 +3,15 @@
     "version": "2024.5.1",
     "home_assistant_domain": "mqtt",
     "funding_url": "facebook.com/magidiy",
-    "new_install_skip_erase": true,
+    "new_install_prompt_erase": false,
     "builds": [
      
       {
       "chipFamily": "ESP32-S3",
         "parts": [
+          { "path": "/static/firmware_build_cn105kit_wifikit/esp32s3_parts/bootloader.bin", "offset": 0 },
+          { "path": "/static/firmware_build_cn105kit_wifikit/esp32s3_parts/partitions.bin", "offset": 32768 },
+          { "path": "/static/firmware_build_cn105kit_wifikit/esp32s3_parts/boot_app0.bin", "offset": 57344 },
           { "path": "/static/firmware_build_cn105kit_wifikit/m2mqtt_2024-5-1-ESP32S3.bin", "offset": 65536 }
         ]
       }
