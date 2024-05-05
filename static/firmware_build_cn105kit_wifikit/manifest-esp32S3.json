@@ -3,7 +3,7 @@
     "version": "2024.5.1",
     "home_assistant_domain": "mqtt",
     "funding_url": "facebook.com/magidiy",
-    "new_install_prompt_erase": true,
+    "new_install_skip_erase": true,
     "builds": [
      
       {
