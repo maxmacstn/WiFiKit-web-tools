@@ -1,15 +1,14 @@
 {
     "name": "Mitsubishi2MQTT - Magi's Edition",
-    "version": "2021.1.10",
+    "version": "2024.5.1",
     "home_assistant_domain": "mqtt",
     "funding_url": "facebook.com/magidiy",
-    "new_install_prompt_erase": true,
     "builds": [
      
       {
-        "chipFamily": "ESP8266",
+      "chipFamily": "ESP32-S3",
         "parts": [
-          { "path": "/static/firmware_build_cn105kit/m2mqtt-22-1-magi-10-ESP07.bin", "offset": 0 }
+          { "path": "/static/firmware_build_cn105kit/m2mqtt_2024-5-1-ESP32S3.bin", "offset": 65536 }
         ]
       }
     ]

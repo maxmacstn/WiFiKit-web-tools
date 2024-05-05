@@ -132,15 +132,18 @@
   		border-top: 1px solid #bbb;
 	}
   </style>
-  <script type="module" src="https://unpkg.com/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"></script>
-  <script module>
-    import(
-      // In development we import locally.
-      window.location.hostname === "localhost"
-        ? "/dist/web/install-button.js"
-        : "https://unpkg.com/esp-web-tools/dist/web/install-button.js?module"
-    );
-  </script>
+   <script
+      type="module"
+      src="https://unpkg.com/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"
+    ></script>
+    <script module>
+      import(
+        // In development we import locally.
+        window.location.hostname === "localhost"
+          ? "/dist/web/install-button.js"
+          : "https://unpkg.com/esp-web-tools/dist/web/install-button.js?module"
+      );
+    </script>
 </head>
 
 <body>
@@ -151,7 +154,7 @@
     </p>
 
     <p>Firmware for: <b>Mitsubishi MR.Slim</b><p>
-    <p>Current release: <code>2022.01.10 - magi's edition (Aug 31, 2023)</code></p>
+    <p>Current release: <code>Mitsubishi2MQTT - magi's edition 2024.5.1</code></p>
 
     <h2 id="flash_usb">อัปเดตผ่าน USB Serial</h2>
 
@@ -180,23 +183,33 @@
 
           <ul class="radios">
             <li>
-              <label><input type="radio" name="type" value="static/firmware_build_cn105kit/manifest-esp07.json" />
+              <label><input type="radio" name="type" value="static/firmware_build_cn105kit_wifikit/manifest-esp07.json" />
                 CN105Kit V2</label>
             </li>
             <li>
-              <label><input type="radio" name="type" value="static/firmware_build_cn105kit/manifest-esp12E.json" />
+              <label><input type="radio" name="type" value="static/firmware_build_cn105kit_wifikit/manifest-esp12E.json" />
                 CN105Kit V2.1
               </label>
             </li>
             <li>
-              <label><input type="radio" name="type" value="static/firmware_build_cn105kit/manifest-esp32S3.json" />
+              <label><input type="radio" name="type" value="static/firmware_build_cn105kit_wifikit/manifest-esp32S3.json" />
                 WiFiKit Serial 
               </label>
             </li>
           </ul>
           
           <p class="button-row" align="center">
-            <esp-web-install-button class="invisible"></esp-web-install-button>
+            <esp-web-install-button class="invisible">
+                <i slot="unsupported">
+          The demo is not available because your browser does not support Web
+          Serial. Open this page in Google Chrome or Microsoft Edge instead<span
+            class="not-supported-i hidden"
+          >
+            (but not on your iOS device)</span
+          >.
+        </i>
+            
+            </esp-web-install-button>
           </p>
 
         </div>
@@ -205,7 +218,7 @@
 	<hr class="solid">
 
     <h2 id="update_ota">อัปเดตผ่าน OTA</h2>
-    <p style="margin-top: -2%;"><i>สำหรับ CN105Kit V1 และ V2.1 เท่านั้น</i></p>
+    <p style="margin-top: -2%;"><i>สำหรับ CN105Kit V1, V2.1 และ WiFiKit Serial เท่านั้น</i></p>
 
     <div class="subsection" >
 
