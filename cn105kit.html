@@ -126,6 +126,11 @@
         color: #29a19c;
       }
     }
+	/* Solid border */
+	hr.solid {
+		margin-top: 20px;
+  		border-top: 1px solid #bbb;
+	}
   </style>
   <script type="module" src="https://unpkg.com/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"></script>
   <script module>
@@ -140,11 +145,12 @@
 
 <body>
   <div class="content">
-    <h1>CN105Kit Web Tools</h1>
+    <h1>WiFikit Serial / CN105Kit Web Tools</h1>
     <p>
-      อัปเดตเฟิร์มแวร์โมดูล Wi-Fi CN105Kit ผ่าน Serial ง่ายๆ ผ่าน Browser
+      อัปเดตเฟิร์มแวร์โมดูล Wi-Fi WiFikit Serial / CN105Kit ผ่าน Serial ง่ายๆ ผ่าน Browser
     </p>
 
+    <p>Firmware for: <b>Mitsubishi MR.Slim</b><p>
     <p>Current release: <code>2022.01.10 - magi's edition (Aug 31, 2023)</code></p>
 
     <h2 id="flash_usb">อัปเดตผ่าน USB Serial</h2>
@@ -153,6 +159,7 @@
 
 
       <h3>ขั้นตอน</h3>
+      <h4>สำหรับ CN105Kit</h4>
       <ol>
         <li>ปรับสวิตช์บนโมดูล CN105Kit เป็น Flash Mode</li>
         <li>เชื่อมต่อ USB to Serial เข้ากับโมดูล CN105Kit <a href="#CN105KIT_v2_connection">ตามแผนภาพนี้ </a></li>
@@ -160,6 +167,11 @@
         <li>เลือก Serial Device และทำตามขั้นตอน</li>
         <li>รอจน flash firmware สำเร็จ และทำการปรับสวิทช์โมดูลไปที่ Normal Mode</li>
       </ol>
+      <h4>สำหรับ WiFikit Serial</h4>
+        <ol>
+        <li>ถอดโมดูลออกจากเครื่องปรับอากาศ</li>
+        <li>เชื่อมต่อสายจากคอมพิวเตอร์ไปที่ช่อง USB-C ของโมดูล</li>
+        </ol>
 
 
       <h3 id="choose-fw">เลือกเวอร์ชั่น Hardware</h2>
@@ -173,16 +185,24 @@
             </li>
             <li>
               <label><input type="radio" name="type" value="static/firmware_build_cn105kit/manifest-esp12E.json" />
-                CN105Kit V2.1 </p>
+                CN105Kit V2.1
+              </label>
+            </li>
+            <li>
+              <label><input type="radio" name="type" value="static/firmware_build_cn105kit/manifest-esp32S3.json" />
+                WiFiKit Serial 
               </label>
             </li>
           </ul>
+          
           <p class="button-row" align="center">
             <esp-web-install-button class="invisible"></esp-web-install-button>
           </p>
 
         </div>
     </div>
+	
+	<hr class="solid">
 
     <h2 id="update_ota">อัปเดตผ่าน OTA</h2>
     <p style="margin-top: -2%;"><i>สำหรับ CN105Kit V1 และ V2.1 เท่านั้น</i></p>
@@ -198,16 +218,20 @@
         
       </ol>
     </div>
+    
+    <hr class="solid">
+
 
     <h2 id="identify_hw">การดูเวอร์ชั่น Hardware</h2>
 
     <table style="text-align: center">
       <tr>
-        <th style="width:20%">รุ่น Hardware </th>
+        <th style="width:10%">รุ่น Hardware </th>
         <th>รูป</th>
         <th style="width:10%">Variant</th>
         <th style="width:30%">Label</th>
         <th style="width:10%">USB Serial</th>
+        <th style="width:10%">USB-C</th>
         <th style="width:10%">OTA</th>
       </tr>
       <tr>
@@ -215,6 +239,7 @@
         <td><img width="100%" src="/img/cn105kit_v1.jpg" /> </td>
         <td>Wemos D1 Mini ESP12E</td>
         <td>-</td>
+        <td>❌</td>
         <td>❌</td>
         <td>✅</td>
       </tr>
@@ -226,6 +251,7 @@
           <br> <i>หรืออาจไม่มี Label </i></td>
         <td>✅</td>
         <td>❌</td>
+        <td>❌</td>
       </tr>
       <tr>
         <td>V2.1</td>
@@ -234,10 +260,25 @@
         <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/CN105Kit_V2_1_label.png" />
         </td>
         <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td><img width="100%" src="/img/WiFiKit_serial.png" /> </td>
+        <td>WiFiKit Serial</td>
+        <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/WiFiKit_serial_label.png" />
+        </td>
+        <td>✅</td>
+        <td>✅</td>
         <td>✅</td>
       </tr>
 
+
     </table>
+    
+    <hr class="solid">
+
 
     <h2 id="CN105KIT_v2_connection">การเชื่อมต่อ USB to Serial สำหรับ CN105Kit V2 และ 2.1</h2>
     <div class="projects">
