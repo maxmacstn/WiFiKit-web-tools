@@ -30,7 +30,7 @@
     }
 
     .content {
-      max-width: 600px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 12px;
     }
@@ -156,6 +156,65 @@
     <p>Firmware for: <b>Mitsubishi MR.Slim</b><p>
     <p>Current release: <code>Mitsubishi2MQTT - magi's edition 2024.5.1</code></p>
 
+
+    <hr class="solid">
+
+
+    <h2 id="identify_hw">การดูเวอร์ชั่น Hardware</h2>
+
+    <table style="text-align: center; max-width:800px">
+      <tr>
+        <th style="width:10%">รุ่น Hardware </th>
+        <th>รูป</th>
+        <th style="width:10%">Variant</th>
+        <th style="width:30%">Label</th>
+        <th style="width:12%">USB Serial</th>
+        <th style="width:12%">USB-C</th>
+        <th style="width:12%">OTA</th>
+      </tr>
+      <tr>
+        <td>V1</td>
+        <td><img width="100%" src="/img/cn105kit_v1.jpg" /> </td>
+        <td>Wemos D1 Mini ESP12E</td>
+        <td>-</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>V2</td>
+        <td><img width="100%" src="/img/cn105kit_v2.jpg" /> </td>
+        <td>WiFi Serial ESP07</td>
+        <td><img width="70%" style="object-fit: cover;   border: 1px solid #000" src="/img/CN105Kit_V2_label.png" />
+          <br> <i>หรืออาจไม่มี Label </i></td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>ผ่าน Minimal FW</td>
+      </tr>
+      <tr>
+        <td>V2.1</td>
+        <td><img width="100%" src="/img/cn105kit_v2.jpg" /> </td>
+        <td>WiFi Serial ESP12E</td>
+        <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/CN105Kit_V2_1_label.png" />
+        </td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td>WiFiKit Serial</td>
+        <td><img width="100%" src="/img/WiFiKit_serial.png" /> </td>
+        <td>WiFiKit Serial 1.2 (ESP32S3)</td>
+        <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/WiFiKit_serial_label.png" />
+        </td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+
+
+    </table>
+
     <h2 id="flash_usb">อัปเดตผ่าน USB Serial</h2>
 
       <div class="subsection" >
@@ -170,6 +229,20 @@
         <li>เลือก Serial Device และทำตามขั้นตอน</li>
         <li>รอจน flash firmware สำเร็จ และทำการปรับสวิทช์โมดูลไปที่ Normal Mode</li>
       </ol>
+
+
+      <h5 id="CN105KIT_v2_connection">การเชื่อมต่อ USB to Serial สำหรับ CN105Kit V2 และ 2.1</h5>
+      <div class="projects">
+        <img style="max-width: 600px " src="img/cn105kit_v2_flash_guide.png">
+      </div>
+  
+      <h5 id="video">วิดีโอ</h5>
+  
+      <div class="projects">
+        <iframe width="80%" height="300px" src="https://www.youtube.com/embed/9Dg3bSOL_b4?si=rqsBtCEosb7MCZvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+      </div>
+  
       <h4>สำหรับ WiFikit Serial</h4>
         <ol>
         <li>ถอดโมดูลออกจากเครื่องปรับอากาศ</li>
@@ -218,92 +291,40 @@
 	<hr class="solid">
 
     <h2 id="update_ota">อัปเดตผ่าน OTA</h2>
-    <p style="margin-top: -2%;"><i>สำหรับ CN105Kit V1, V2.1 และ WiFiKit Serial เท่านั้น</i></p>
-
+    <!-- <p style="margin-top: -2%;"><i>สำหรับ CN105Kit V1, V2.1 และ WiFiKit Serial สามารถ Update ไปรุ่นถัดไปได้ทันที</i></p> -->
     <div class="subsection" >
 
-      <h3>ขั้นตอน</h3>
+      <h3>ขั้นตอนสำหรับ CN105Kit V1, V2.1 (ESP12-E) และ WiFiKit Serial (ESP32s3)</h3>
+      <p>สามารถอัปเดตไปรุ่นถัดไปได้ทันที</p>
       <ol>
-        <li>Download ไฟล์เฟิร์มแวร์ <code>.bin</code> <a href="https://github.com/maxmacstn/mitsubishi2MQTT/releases/">จากที่นี่</a> ตาม hardware ที่ใช้ </li>
-        <li>เข้าไปที่หน้าเว็บผ่าน IP Address ของโมดูล</li>
-        <li>กด Firmware Update แล้วเลือกไฟล์  <code>.bin</code></li>
+        <li>Download ไฟล์ไฟล์เฟิร์มแวร์ของ Mitsubishi2MQTT เวอร์ชั่นล่าสุด <a href="https://github.com/maxmacstn/mitsubishi2MQTT/releases/">จากที่นี่</a> (เลือกไฟล์ .bin ตาม hardware ที่ใช้) </li>
+        <li>เข้าไปที่หน้าเว็บ config ผ่าน IP Address ของโมดูล</li>
+        <li>กด Firmware Update แล้วเลือกไฟล์  <code>.bin</code> ที่ดาวน์โหลดมา</li>
         <li>กด Start upgrade</li>
-        
       </ol>
+
+      <h3>ขั้นตอนสำหรับ CN105Kit V2 (ESP07) หรือรุ่นที่เจอ Error: File upload buffer miscompare</h3>
+      <p>เนื่องจากชิป ESP07 มีพื้นที่ความจุ 1 MB จึงไม่สามารถอัปโหลด Firmware เวอร์ชั่นใหม่ไปเก็บในบอร์ดได้ ต้องอัปเดตเป็นเฟิร์มแวร์เวอร์ชั่น Minimal ซึ่งใช้พื้นที่น้อยก่อน แล้วจึงค่อย OTA เพื่อ Update เป็นเวอร์ชั่นล่าสุด</p>
+
+      <img style="width: 80%;" src="img/minimal_update_step.png">
+
+      <ol>
+        <li>Download ไฟล์ไฟล์เฟิร์มแวร์ของ Mitsubishi2MQTT เวอร์ชั่นล่าสุด <a href="https://github.com/maxmacstn/mitsubishi2MQTT/releases/">จากที่นี่</a> (เลือกไฟล์ .bin ตาม hardware ที่ใช้) </li>
+        <li>Download ไฟล์ไฟล์เฟิร์มแวร์ Minimal สำหรับใช้ OTA <a href="https://github.com/maxmacstn/ESP8266-OTA-Minimal/releases/download/public/esp8266_ota_minimal_v1.bin">จากที่นี่</a>
+        <li>เข้าไปที่หน้าเว็บ config ผ่าน IP Address ของโมดูล</li>
+        <li>กด Firmware Update แล้วเลือกไฟล์เฟิร์มแวร์ Minimal ที่ดาวน์โหลดมา รอจนการติดตั้งเฟิร์มแวร์ minimal เสร็จสบมูรณ์ (LED กระพริบทุก 1 วินาที)</li> 
+        <li>เชื่อมต่อ Wi-Fi ของคอมพิวเตอร์ไปที่สัญญาณ Wi-Fi ที่ตัวโมดูลปล่อยออกมา (AP Mode), Wi-Fi ชื่อ <code>esp8266-webupdate</code> </li> 
+        <li>เข้าไปที่หน้าเว็บสำหรับการอัปเดต: <code>http://192.168.4.1/update</code> </li> 
+        <li>เลือกเฟิร์มแวร์ Mitsubishi2MQTT ที่ดาวน์โหลดมา แล้วทำการกด Update Firmware</li> 
+        <li>รอจนเสร็จสิ้น แล้วทำการตั้งค่าโมดูลใหม่</li> 
+      </ol>
+      <p>*การตั้งค่าของโมดูลจะสูญหาย โปรดจดชื่อ MQTT Hostname และค่าต่าง ๆ ไว้ก่อน (ยกเว้นรุ่น ESP12-E การตั้งค่ายังอยู่)</p>
+      <p>**หากฟีเจอร์ใหม่ไม่ปรากฎใน MQTT Integration ให้ทำการลบอุปกรณ์ออกจาก MQTT Integration แล้วทำการ Reboot Module หนึ่งรอบ</p>
+
+
     </div>
     
-    <hr class="solid">
-
-
-    <h2 id="identify_hw">การดูเวอร์ชั่น Hardware</h2>
-
-    <table style="text-align: center">
-      <tr>
-        <th style="width:10%">รุ่น Hardware </th>
-        <th>รูป</th>
-        <th style="width:10%">Variant</th>
-        <th style="width:30%">Label</th>
-        <th style="width:10%">USB Serial</th>
-        <th style="width:10%">USB-C</th>
-        <th style="width:10%">OTA</th>
-      </tr>
-      <tr>
-        <td>V1</td>
-        <td><img width="100%" src="/img/cn105kit_v1.jpg" /> </td>
-        <td>Wemos D1 Mini ESP12E</td>
-        <td>-</td>
-        <td>❌</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>V2</td>
-        <td><img width="100%" src="/img/cn105kit_v2.jpg" /> </td>
-        <td>WiFi Serial ESP07</td>
-        <td><img width="70%" style="object-fit: cover;   border: 1px solid #000" src="/img/CN105Kit_V2_label.png" />
-          <br> <i>หรืออาจไม่มี Label </i></td>
-        <td>✅</td>
-        <td>❌</td>
-        <td>❌</td>
-      </tr>
-      <tr>
-        <td>V2.1</td>
-        <td><img width="100%" src="/img/cn105kit_v2.jpg" /> </td>
-        <td>WiFi Serial ESP12E</td>
-        <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/CN105Kit_V2_1_label.png" />
-        </td>
-        <td>✅</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td>-</td>
-        <td><img width="100%" src="/img/WiFiKit_serial.png" /> </td>
-        <td>WiFiKit Serial</td>
-        <td><img width="70%" style="object-fit: cover;  border: 1px solid #000" src="/img/WiFiKit_serial_label.png" />
-        </td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
-      </tr>
-
-
-    </table>
     
-    <hr class="solid">
-
-
-    <h2 id="CN105KIT_v2_connection">การเชื่อมต่อ USB to Serial สำหรับ CN105Kit V2 และ 2.1</h2>
-    <div class="projects">
-      <img style="width: 80%;" src="img/cn105kit_v2_flash_guide.png">
-    </div>
-
-    <h2 id="video">วิดีโอ</h2>
-
-    <div class="projects">
-      <iframe width="80%" height="300px" src="https://www.youtube.com/embed/9Dg3bSOL_b4?si=rqsBtCEosb7MCZvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-    </div>
 
 
 
